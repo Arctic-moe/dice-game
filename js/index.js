@@ -1,0 +1,266 @@
+
+function start_game() {
+    let card_pool = prepare_data();
+    
+}
+
+function prepare_data() {
+    return JSON.parse(`{
+        "projects": [
+            {
+                "id": 0,
+                "name": "Inari Project",
+                "cost": "six 1s"
+            },
+            {
+                "id": 1,
+                "name": "Dazbog Project",
+                "cost": "seven of a kind"
+            },
+            {
+                "id": 2,
+                "name": "Pangu Project",
+                "cost": "Sum=40"
+            },
+            {
+                "id": 3,
+                "name": "Vesta Project",
+                "cost": "two triples in a row. Can't be purchased if you haven't built another card this turn"
+            },
+            {
+                "id": 4,
+                "name": "Te Kore Project",
+                "cost": "two sets of four of a kind"
+            },
+            {
+                "id": 5,
+                "name": "Vishnu Project",
+                "cost": "six 6s"
+            },
+            {
+                "id": 6,
+                "name": "Freya Project",
+                "cost": "four pairs in a row"
+            },
+            {
+                "id": 7,
+                "name": "Quetzalcoatl Project",
+                "cost": "ten even dice or ten odd dice. Preserved die counts as two dice."
+            },
+            {
+                "id": 8,
+                "name": "Athena Project",
+                "cost": "four wild"
+            },
+            {
+                "id": 9,
+                "name": "Herus Project",
+                "cost": "six in a row. Can't be purchased if you activated Command Center this turn."
+            }
+        ],
+        "baseColony": [
+            {
+                "id": 1,
+                "name": "Headquarter",
+                "effect": "Start of turn: Roll 4 Basic dice"
+            },
+            {
+                "id": 2,
+                "name": "Command Center",
+                "effect": "Click: Reroll all selected basic dice"
+            },
+            {
+                "id": 3,
+                "name": "Laboratory",
+                "effect": "A pair > Draw a Blueprint."
+            },
+            {
+                "id": 4,
+                "name": "Forge",
+                "effect": "Click: Three in a row > Gain a perserved Wild die"
+            }
+        ],
+        "blueprints": [
+            {
+                "id": 0,
+                "name": "Minor Settlement",
+                "cost": "three in a row",
+                "effect": "Start of even round: Roll a Basic die"
+            },
+            {
+                "id": 1,
+                "name": "Clone Machine",
+                "cost": "five in a row",
+                "effect": "Click: Select a die, generate a fixed copy of it"
+            },
+            {
+                "id": 2,
+                "name": "Drone6",
+                "cost": "6, 6, 6",
+                "effect": "Start of turn: Gain a fixed 6"
+            },
+            {
+                "id": 3,
+                "name": "Drone5",
+                "cost": "5, 5, 5",
+                "effect": "Start of turn: Gain a fixed 5"
+            },
+            {
+                "id": 4,
+                "name": "Drone4",
+                "cost": "4, 4, 4",
+                "effect": "Start of turn: Gain a fixed 4"
+            },
+            {
+                "id": 5,
+                "name": "Drone3",
+                "cost": "3, 3, 3",
+                "effect": "Start of turn: Gain a fixed 3"
+            },
+            {
+                "id": 6,
+                "name": "Drone2",
+                "cost": "2, 2, 2",
+                "effect": "Start of turn: Gain a fixed 2"
+            },
+            {
+                "id": 7,
+                "name": "Drone1",
+                "cost": "1, 1, 1",
+                "effect": "Start of turn: Gain a fixed 1"
+            },
+            {
+                "id": 8,
+                "name": "Dome",
+                "cost": "fullhouse",
+                "effect": "Start of turn: Roll a basic dice and preserve it"
+            },
+            {
+                "id": 9,
+                "name": "Prospector",
+                "cost": "four of a kind",
+                "effect": "Start of turn: Roll a die, fix and preserve it"
+            },
+            {
+                "id": 10,
+                "name": "Shuttle",
+                "cost": "three of a kind",
+                "effect": "Enter play: +2 M.O.D. You may mod 6 into 1 or 1 into 6"
+            },
+            {
+                "id": 11,
+                "name": "Replicant Robot",
+                "cost": "two wild",
+                "effect": "Start of turn: Gain a wild die"
+            },
+            {
+                "id": 12,
+                "name": "Quantum Computer",
+                "cost": "two pairs in a row",
+                "effect": "Click: Reroll all selected basic dice."
+            },
+            {
+                "id": 13,
+                "name": "Monopole",
+                "cost": "three odd. All your other dices must be odd",
+                "effect": "Start of turn: Gain a fixed die of odd value."
+            },
+            {
+                "id": 14,
+                "name": "Reactor20",
+                "cost": "sum=20",
+                "effect": "Click: 1 dice>Split its value into 2 dice"
+            },
+            {
+                "id": 15,
+                "name": "Energy Saver",
+                "cost": "four of a kind",
+                "effect": "End of turn: If you have two more dice, roll two extra in the next turn"
+            },
+            {
+                "id": 16,
+                "name": "Recycing",
+                "cost": "three of a kind",
+                "effect": "when you spend a wild die, roll an extra at the start of next round."
+            },
+            {
+                "id": 17,
+                "name": "Tourist Attraction",
+                "cost": "1, 2, 3",
+                "effect": "Start of turn: Roll one extra dice per project built"
+            },
+            {
+                "id": 18,
+                "name": "Selfrepair Material",
+                "cost": "four of a kind",
+                "effect": "End of turn: If you have no non-preserved dice, roll two more in the next turn"
+            },
+            {
+                "id": 19,
+                "name": "Observatory",
+                "cost": "4, 5, 6",
+                "effect": "Enter play: draw a card. Gain 1 more M.O.D. when you discard a card"
+            },
+            {
+                "id": 20,
+                "name": "Dormant Chamber",
+                "cost": "1, 3, 5",
+                "effect": "Click: A die > fix and preserve it."
+            },
+            {
+                "id": 21,
+                "name": "Prototype",
+                "cost": "three in a row",
+                "effect": "Start of turn: Gain a fixed die of random value."
+            },
+            {
+                "id": 22,
+                "name": "Reactor25",
+                "cost": "Sum=25",
+                "effect": "Click: 1 die > a die of its value + 1 and a die of its value - 1"
+            },
+            {
+                "id": 23,
+                "name": "Extractor",
+                "cost": "4, 5, 6",
+                "effect": "Click: A pair > A Preserved Wild"
+            },
+            {
+                "id": 24,
+                "name": "Settlement",
+                "cost": "four in a row",
+                "effect": "Start of turn: Roll a basic die"
+            },
+            {
+                "id": 25,
+                "name": "Bionic Robot",
+                "cost": "four of a kind ",
+                "effect": "When reroll: If exactly one die is rerolled, gain a basic die"
+            },
+            {
+                "id": 26,
+                "name": "ThreeD Printer",
+                "cost": "1, 2, 3",
+                "effect": "Click: 1 > A wild die"
+            },
+            {
+                "id": 27,
+                "name": "Transporter",
+                "cost": "2, 4, 6",
+                "effect": "Start of turn: +1 M.O.D."
+            },
+            {
+                "id": 28,
+                "name": "OMNI",
+                "cost": "five of a kind ",
+                "effect": "Start of turn: gain and preserve a wild die."
+            },
+            {
+                "id": 29,
+                "name": "Reactor16",
+                "cost": "Sum=16",
+                "effect": "2 dice>equally distribute their value"
+            }
+        ]
+    }`);
+}
