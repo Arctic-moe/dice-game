@@ -9,6 +9,11 @@ html, body{
     
 }
 
+.left-tag {
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     background-color:black;
 }
@@ -30,7 +35,32 @@ ul {
 
 .head-bar{
     margin-bottom: 20px;
-    height: 23%;
+    height: 28%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.dice {
+    text-align: center;
+    margin: auto;
+    margin-right: 20px;
+    padding: 5px;
+    border: 2px solid;
+    border-color:black;
+    height: 50px;
+    width: 50px;
+    background-color:antiquewhite;
+}
+
+.wild {
+    background-color: chocolate;
+}
+
+.tail-bar{
+    margin-bottom: 20px;
+    height: 10%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -58,6 +88,7 @@ ul {
 .project3-5{
     background-color: rgba(255,255,255,0);
     width: 10%;
+    height: 100%;
     display: flex;
     float: left;
 }
@@ -69,24 +100,49 @@ ul {
     float: right;
 }
 
+.mod-panel {
+    display: flex;
+    flex-direction: row;
+}
+
+.mod-btn {
+    display: flex;
+    margin: auto;
+}
+
 .head-text{
     text-align: center;
+    font-size:larger;
+    font-weight:900;
 }
 
 .fullscreen {
     width: 100%;
+    height: 100%;
 }
 
 .card {
     margin: 5px;
     padding: 5px;
-    height: 160px;
+    height: 200px;
     width: 120px;
     background-color:aquamarine;
     border: 2px solid;
     border-color:crimson;
 }
 
-/* div {
-    background-color: rgba(255,255,255,0.5);
-} */
+.dice-bar-fa {
+    height: inherit;
+}
+
+#dice-bar {
+    height: inherit;
+}
+
+#wild-dice-bar {
+    height: inherit;
+}
+
+.active {
+    border-color: chartreuse;
+}

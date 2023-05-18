@@ -3,6 +3,7 @@
 <head>
     <title>Mars Game</title>
     <script src="./js/index.js" type="module" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/index.css"/>
@@ -19,21 +20,30 @@
                 </div>
             </div>
             <div class="panel panel-default project project2">
-                <div class="panel-body">
-                项目
+                <div class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">项目</span>
                 </div>
-            </div>
-        </div>
-        <div class="panel panel-default board">
-            <div class="panel-body">
-            殖民地
+                <ul id="projects-bar">
+                    <button class="card">
+                        <div class="panel-heading">Title</div>
+                        <div class="panel-body">Desc</div>
+                    </button>
+                    <button class="card">
+                        <div class="panel-heading">Title</div>
+                        <div class="panel-body">Desc</div>
+                    </button>
+                    <button class="card">
+                        <div class="panel-heading">Title</div>
+                        <div class="panel-body">Desc</div>
+                    </button>
+                </ul>
             </div>
         </div>
         <div class="panel panel-default board-3">
-            <div class="panel-body">
-            蓝图
+            <div class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-tower" aria-hidden="true">殖民地</span>
             </div>
-            <ul >
+            <ul id="colonies-bar">
                 <button class="card">
                     <div class="panel-heading">Title</div>
                     <div class="panel-body">Desc</div>
@@ -48,20 +58,67 @@
                 </button>
             </ul>
         </div>
-        <div class="head-bar">
+        <div class="panel panel-default board-3">
+            <div class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-duplicate" aria-hidden="true">蓝图</span>
+            </div>
+            <ul id="blueprints-bar">
+                <button class="card">
+                    <div class="panel-heading">Title</div>
+                    <div class="panel-body">Desc</div>
+                </button>
+                <button class="card">
+                    <div class="panel-heading">Title</div>
+                    <div class="panel-body">Desc</div>
+                </button>
+                <button class="card">
+                    <div class="panel-heading">Title</div>
+                    <div class="panel-body">Desc</div>
+                </button>
+            </ul>
+        </div>
+        <div class="tail-bar">
             <div class="panel panel-default project project3">
-                <div class="panel-body">
-                骰子
+                <div>
+                    <div class="btn btn-default" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-flag" aria-hidden="true">骰子</span>
+                    </div>
+                </div>
+                <div class="dice-bar-fa">
+                    <ul id="dice-bar">
+                        <div class="dice">2</div>
+                        <div class="dice">4</div>
+                        <div class="dice">6</div>
+                    </ul>
                 </div>
             </div>
             <div class="panel panel-default project3-5">
                 <div class="panel-body head-text fullscreen">
                     M.O.D
+                    <br>
+                    <div class="mod-panel">
+                        <button type="button" class="btn btn-default btn-lg mod-btn" id="plus-btn">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 
+                        </button>
+                        <button type="button" class="btn btn-default btn-lg mod-btn" id="energy-panel">
+                            0
+                        </button>
+                        <button type="button" class="btn btn-default btn-lg mod-btn" id="minus-btn">
+                            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> 
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="panel panel-default project project4">
-                <div class="panel-body">
-                狂野骰子
+                <div>
+                    <div class="btn btn-default" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-sort" aria-hidden="true">狂野骰子</span>
+                    </div>
+                </div>
+                <div class="dice-bar-fa">
+                    <ul id="wild-dice-bar">
+
+                    </ul>
                 </div>
             </div>
         </div>
