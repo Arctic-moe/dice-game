@@ -20,7 +20,7 @@ function evt_headquarter() {
     if(typeof(self) == 'undefined') return;
     let new_dice = getKRandom(4, 1, 6);
     new_dice.forEach((idx)=>{
-        dice.push({point: idx, active: 0, wild: 0});
+        dice.push({point: idx, active: 0, wild: 0, preserved: 0});
     });
     self.used = 1;
     console.log(dice);
@@ -32,10 +32,9 @@ function evt_command_center() {
     console.log(self);
     if(typeof(self) == 'undefined') return;
     if(selected_dice.length == 0) return;
-    console.log('reroll');
     selected_dice.forEach((idx)=>{
         if(dice[idx].wild == 0) {
-            dice[idx] = {point: getRandomInt(1, 6), active: 0, wild: 0};
+            dice[idx] = {point: getRandomInt(1, 6), active: 0, wild: 0, preserved: dice[idx].preserved};
         }
     });
     self.used = 1;
@@ -87,7 +86,7 @@ function evt_forge() {
         console.log( dice.splice(selected_dice[i], 1) );
         console.log(selected_dice[i]);
     }
-    dice.push({point:3, active:0, wild: 1});
+    dice.push({point:3, active:0, wild: 1, preserved: 1});
     update_dice();
     update_colonies();
     

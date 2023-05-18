@@ -86,6 +86,8 @@ function update_dice() {
         new_child.setAttribute('class','dice');
         if(dice[i].wild == 1) {
             new_child.classList.add('wild');
+        } else if(dice[i].wild == 2) {
+            new_child.classList.add('fixed');
         }
         new_child.onclick = (event)=> {
             dice[i].active = (dice[i].active == 1 ? 0: 1);
@@ -105,7 +107,7 @@ function update_dice() {
         };
         new_child.innerHTML = `${dice[i].point}`
 
-        if(dice[i].wild == 0) {
+        if(dice[i].wild != 1) {
             dice_bar.appendChild(new_child);
         } else {
             wild_dice_bar.appendChild(new_child);
@@ -139,7 +141,8 @@ const max_turn = 10;
 
 var global = {
     now_trun: 0,
-    energy: 100
+    energy: 100,
+    extra_roll: 0
 }
 
 function active_colony() {

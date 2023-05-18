@@ -58,6 +58,10 @@ ul {
     background-color: chocolate;
 }
 
+.fixed {
+    background-color: gray;
+}
+
 .tail-bar{
     margin-bottom: 20px;
     height: 10%;
